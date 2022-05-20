@@ -4,7 +4,10 @@ from requests.auth import HTTPBasicAuth
 import requests
 from django.conf import settings
 from django.db import transaction
-import zoneinfo
+try:
+    import zoneinfo
+except ImportError:
+    from backports import zoneinfo
 from django.db.models import Sum
 
 
